@@ -17,7 +17,7 @@ angular.module('WhiteboardApp')
 
                     socket.emit('join_board', {
                         board_id: board_id || localStorage.board_id,
-                        name: user.name || localStorage.name || 'Mohammed'
+                        name: (!!user && user.name) || localStorage.name || 'Mohammed'
                     });
 
                     return defer.promise;
